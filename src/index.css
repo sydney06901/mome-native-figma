@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* iOS Safe Area Utilities */
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 54px);
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 34px);
+  }
+  .h-safe-bottom {
+    height: env(safe-area-inset-bottom, 34px);
+  }
+
+  .mobile-app-shell {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100dvh;
+    margin: 0 auto;
+    position: relative;
+    overflow-x: hidden;
+    background: #fbfaf7;
+  }
+}
+
+:root {
+  --font-apple: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "PingFang SC", "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mome-hand: "Schoolbell", "Comic Sans MS", "Bradley Hand", cursive;
+  --mome-canvas: #f4f1eb;
+  --mome-paper: #ffffff;
+  --mome-ink: #292832;
+  --mome-muted-ink: #a5aaa0;
+  --mome-border: #d7d1de;
+  --mome-violet: #613eea;
+  --mome-pink: #ee46d3;
+  --mome-yellow: #fdcd46;
+  --mome-green: #49f500;
+  --mome-blue: #3486f7;
+  --mome-orange: #ff8951;
+  --mome-radius-phone: 40px;
+  --mome-radius-card: 15px;
+  --mome-radius-compact: 8px;
+  --mome-shadow-card: 6px 7px 4px -3px rgb(0 0 0 / 7%);
+  --mome-shadow-lifted: 0 18px 45px rgb(41 40 50 / 14%);
+}
+
+body {
+  font-family: var(--font-apple);
+  background-color: var(--mome-canvas);
+  color: var(--mome-ink);
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.font-mome-hand {
+  font-family: var(--font-mome-hand);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Prevent unwanted callout menus on touch canvas */
+canvas, .touch-none {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3.5px);
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 4px 18px rgba(59, 110, 140, 0.12), 0 0 0 0 rgba(59, 110, 140, 0.08);
+  }
+  50% {
+    box-shadow: 0 6px 24px rgba(59, 110, 140, 0.22), 0 0 0 4px rgba(59, 110, 140, 0.06);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3.5s ease-in-out infinite;
+}
