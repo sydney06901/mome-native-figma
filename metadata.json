@@ -1,0 +1,6 @@
+{
+  "name": "mome - 移动端 AI 手账素材工作台",
+  "description": "从经历照片中寻找有意义的物件，整理成原图素材和风格化插画，用于手账拼贴创作。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

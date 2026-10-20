@@ -1,0 +1,13 @@
+packages:
+  - .
+
+storeDir: .pnpm-store
+nodeLinker: hoisted
+packageImportMethod: copy
+symlink: false
+
+allowBuilds:
+  '@google/genai': true
+  esbuild: true
+  protobufjs: true
+
